@@ -7,11 +7,13 @@ header{
     color: var(--cor-texto-branca);
     padding: var(--espacamento);
     text-align: center;
+    
 }
 a{
     color: var(--cor-texto-branca);
     text-decoration: none;
     font-style: italic;
+    
 }
 a:hover{
     color: #FFD700;
@@ -44,6 +46,7 @@ nav{
 }
 nav ol{
     color: white;
+    padding-left: var(--espacamento);
 }
 nav ul{
     list-style:disc;
@@ -68,12 +71,25 @@ h1{
     font-size: var(--tamanho-titulo);
     font-family: var(--fonte-titulo);
 }
+.titulotexto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor-texto-branca);
+    background: url(/aleatorio/imagem/desenvolvimento.png);
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    background-position: center;
+    border-radius: 15px;
+}
+
 .imagem{
     height: auto;
     width: 50%;
-    margin: auto;
-    padding-bottom: 5px;
+    margin: 15px;
     max-width: 200px;
+    align-items: center;
 }
 .imagemInicial{
     height: auto;
@@ -83,6 +99,15 @@ h1{
     padding-bottom: 5px;
     max-width: 500px;
 }
+.flex{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding-top: 20px;
+}
+.centralizar{
+    text-align: center;
+}
 p,ul,li{
     padding-top: 5px;
 }
@@ -90,7 +115,7 @@ ul{
     list-style:disc;
     padding-left: 30px;
 }
-ol{
+article ol{
     padding: var(--espacamento);
 }
 img{
