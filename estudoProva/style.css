@@ -1,0 +1,116 @@
+/*--Reset--*/
+html{
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+/*--Variaveis--*/
+:root{
+    font-size: 62.5%;
+    --standart-padding:2.0rem;
+
+    /*--fontes--*/
+    --title-font: 'Poppins', sans-serif;
+    --text-font: 'DM Sans', sans-serif;
+
+    /*--Tamanho da fonte--*/
+    --title-font-size:3.0rem;
+    --text-font-size:1.6rem;
+
+    /*--Cor--*/
+    --hue: 100;
+
+    /*---Cores de cada coisa--*/
+    --base-color-one: hsl(var(--hue) 36% 57%);
+    --base-color-two: hsl(var(--hue) 65% 88%);
+    --base-color-three: hsl(var(--hue) 57% 53%);
+    --title-color: hsl(var(--hue) 41% 10%);
+    --text-color: hsl(0 0% 46%);
+    --text-color-light: hsl(0 0% 98%);
+    --background-color: hsl(0 0% 98%);
+}
+/*--Grid--*/
+.container{
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas: 
+    "header"
+    "navegacao"
+    "content"
+    "aside"
+    "rodape";
+}
+.header{
+    grid-area: header;
+}
+.navegacao{
+    grid-area: navegacao;
+}
+.content{
+    grid-area: content;
+}
+.aside{
+    grid-area: aside;
+}
+.rodape{
+    grid-area: rodape;
+}
+@media(min-width:768px){
+    .container{
+        display: grid;
+        grid-template-areas: 
+        "header header header"
+        "navegacao content aside"
+        "rodape rodape rodape";
+        grid-template-columns: 200px 1fr 200px;
+        grid-template-rows: auto 1fr auto;
+    }
+}
+/*--estilo da pagina--*/
+body{
+    font: 400 var(--text-font-size) var(--text-font);
+    color: var(--text-color);
+    background: var(--background-color);
+}
+.title{
+    font: 700 var(--title-font-size) var(--title-font);
+    color: var(--title-color);
+}
+header{
+    background: var(--base-color-one);
+    padding: var(--standart-padding);
+    text-align: center;
+}
+main{
+    padding: var(--standart-padding);
+}
+nav{
+    background-color: var(--base-color-two);
+    padding: var(--standart-padding);
+}
+aside{
+    background-color: var(--base-color-three);
+    padding: var(--standart-padding);
+    color: var(--text-color-light);
+}
+footer{
+    background-color: var(--base-color-one);
+    padding: var(--standart-padding);
+    color: var(--text-color-light);
+    text-align: center;
+}

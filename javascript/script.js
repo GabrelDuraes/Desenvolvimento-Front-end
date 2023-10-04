@@ -77,9 +77,9 @@ function ex04() {
     }
     alert(`Valor de h(x)= ${hx}\nValor de f(x)= ${fx}\nValor de g(x)= ${gx}`)
 }
-function ex05() {     /*DUVIDA NESSA AQ */
+function ex05() {
     var numero = []
-    var cont = 1;
+    var cont = 0;
     var par = 0
     var impar = 0
     var conta
@@ -91,17 +91,78 @@ function ex05() {     /*DUVIDA NESSA AQ */
             cont++
         }
     }
-    for (let i = 0; i < cont-1; i++) {
+    for (let i = 0; i < cont; i++) {
         conta = numero[i] % 2
-        if(conta==0){
+        if (conta == 0) {
+            alert
             par++
-        }else{
+        } else {
             impar++
         }
     }
-    alert(`Total de numeros digitados: ${cont - 1}\nNúmeros pares: ${par}\nNúmeros impares: ${impar}`)
+    alert(`Total de numeros digitados: ${cont}\nNúmeros pares: ${par}\nNúmeros impares: ${impar}`)
 
 }
 function ex06() {
-   
+    var qtdNum = prompt("Informe a quantidade de numeros que serão digitados: ")
+    var num
+    var numMaior
+    var numMenor
+    for (let i = 0; i < qtdNum; i++) {
+        num = prompt(`Informe o ${i + 1}° número: `)
+        if (i == 0) {
+            numMaior = num
+            numMenor = num
+        } else {
+            if (num > numMaior) {
+                numMaior = num
+            }
+            if (num < numMenor) {
+                numMenor = numMenor
+            }
+        }
+    }
+    alert(`Maior número digitado: ${numMaior}\nMenor número digitado: ${numMenor}`)
 }
+function ex07() {
+    var info = prompt("Informe ate qual valor vai a serie Fibonacci: ")
+    var fibonacci = [0, 1]
+    let conta
+    let cont=1
+    do{
+        cont++
+        conta=fibonacci[cont-1]+fibonacci[cont-2]
+        if(conta<=info){
+            fibonacci[cont]=conta
+        }
+    }while(info>=fibonacci[cont])
+    alert(`Serie de fibonacci= ${fibonacci}`)
+}
+function ex08() {
+    let num=prompt("Informe o numero para calcular o fatorial: ")
+    let fatorial=num
+    for(let i=num-1;i>=1;i--){
+        fatorial*=i
+    }
+    alert(`O fatorial de ${num} é ${fatorial}`)
+}
+function ex09() {
+    let num=prompt("Informe um valor para calculara tabuada: ")
+    let tabuada=[]
+    for(let i=1;i<=10;i++){
+        tabuada[i]=num*i
+    }
+    alert(`Tabuada do numero ${num}:\n
+    ${num} X 1 = ${tabuada[1]}\n
+    ${num} X 2 = ${tabuada[2]}\n
+    ${num} X 3 = ${tabuada[3]}\n
+    ${num} X 4 = ${tabuada[4]}\n
+    ${num} X 5 = ${tabuada[5]}\n
+    ${num} X 6 = ${tabuada[6]}\n
+    ${num} X 7 = ${tabuada[7]}\n
+    ${num} X 8 = ${tabuada[8]}\n
+    ${num} X 9 = ${tabuada[9]}\n
+    ${num} X 10 = ${tabuada[10]}`
+    )
+}
+

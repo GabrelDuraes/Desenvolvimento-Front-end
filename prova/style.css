@@ -1,0 +1,99 @@
+/*===Reset==*/
+html{
+    box-sizing: border-box;
+}
+*,*::after,*::before{
+    box-sizing: inherit;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;    
+}
+/*==Variaveis==*/
+:root{
+    font-size: 85%;
+    --espacamento: 2.0rem;
+    /*==Fontes==*/
+    --fonte-texto: 'Playfair Display', serif;
+    --fonte-titulo: 'Oswald', sans-serif;
+    /*==Cores==*/
+    --cor-principal: #1D4E89;
+    --cor-secundaria: #6AB1CA;
+    --cor-terciaria:#84BED3;
+    --texto-branco: white;
+}
+
+/*==Grid==*/
+.container{
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas: 
+    "cabecalho"
+    "navigation"
+    "conteudo"
+    "aside"
+    "rodape";
+}
+.cabecalho{
+    grid-area: cabecalho;
+}
+.navigation{
+    grid-area: navigation;
+}
+.conteudo{
+    grid-area: conteudo;
+}
+.aside{
+    grid-area: aside;
+}
+.rodape{
+    grid-area: rodape;
+}
+@media(min-width:768px){
+    .container{
+        display: grid;
+        grid-template-areas: 
+        "cabecalho cabecalho cabecalho"
+        "navigation conteudo aside"
+        "rodape rodape rodape";
+        grid-template-columns: 200px 1fr 200px ;
+        grid-template-rows: auto 1fr auto;
+    }
+}
+
+/*==Estilo==*/
+h1,h2{
+    font-family: var(--fonte-titulo);
+}
+header{
+    background-color: var(--cor-principal);
+    color: var(--texto-branco);
+    text-align: center
+}
+.navigation{
+    background-color: var(--cor-secundaria);
+    font-family: var(--fonte-texto);
+    padding-left: 20px;
+}
+.conteudo{
+    background-color: var(--cor-terciaria);
+    padding: var(--espacamento);
+}
+.aside{
+    background-color: var(--cor-secundaria);
+}
+.rodape{
+    background-color: var(--cor-principal);
+    color: var(--texto-branco);
+    padding: var(--espacamento);
+}
+p{
+    font-family: var(--fonte-texto);
+    padding-top: 15px;
+}
